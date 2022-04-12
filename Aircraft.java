@@ -7,12 +7,12 @@ public class Aircraft
     protected Coordinates coordinates;
     private long idCounter;
 
-    public Place(String ID) {
-        this.ID = ID;
-    }
+    // public Place(String ID) {
+    //     this.ID = ID;
+    // }
 
-    @Override
-    public String toString() {
-        return this.ID;
-    }
+    // @Override
+    // public String toString() {
+    //     return this.ID;
+    // }
 }
