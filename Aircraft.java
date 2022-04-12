@@ -1,6 +1,5 @@
 
-public class Aircraft 
-{
+public class Aircraft {
 
     protected long id;
     protected String name;
@@ -8,11 +7,11 @@ public class Aircraft
     private long idCounter;
 
     // public Place(String ID) {
-    //     this.ID = ID;
+    // this.ID = ID;
     // }
 
     // @Override
     // public String toString() {
-    //     return this.ID;
+    // return this.ID;
     // }
 }
