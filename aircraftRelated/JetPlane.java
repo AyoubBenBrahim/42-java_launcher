@@ -1,4 +1,5 @@
-package AvajPackage;
+package aircraftRelated;
+import weatherRelated.*;
 
 public class JetPlane extends Aircraft implements Flyable
 {

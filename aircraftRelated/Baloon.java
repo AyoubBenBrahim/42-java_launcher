@@ -1,4 +1,6 @@
-package AvajPackage;
+package aircraftRelated;
+
+import weatherRelated.*;
 
 public class Baloon extends Aircraft implements Flyable
 {

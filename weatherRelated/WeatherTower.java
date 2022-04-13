@@ -1,4 +1,6 @@
-package AvajPackage;
+package weatherRelated;
+import aircraftRelated.*;
+
 
 public class WeatherTower extends Tower
 {
