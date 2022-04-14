@@ -1,8 +1,10 @@
 import java.io.File; // Import the File class
 import java.io.FileNotFoundException; // Import this class to handle errors
 import java.util.Scanner; // Import the Scanner class to read text files
+
+import aircraftRelated.*;
 import myExceptions.*;
-// import myExceptions.myExceptions.*;
+import  weatherRelated.*;
 
 public class Main {
     static Scanner myReader;
@@ -50,6 +52,13 @@ public class Main {
                     height = Integer.parseInt(line.split(" ")[4]);
 
                     System.out.println("    " + type + "/" + name + "/" + longtitude + "/" + latitude + "/" + height);
+                    Flyable flb =  new AircraftFactory.newAirecraft(
+                        type,
+                        name,
+                       longtitude,
+                       latitude,
+                        height
+                );
                 }
 
                 lineCounter++;

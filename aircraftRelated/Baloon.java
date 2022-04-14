@@ -6,7 +6,7 @@ public class Baloon extends Aircraft implements Flyable
 {
     private WeatherTower weatherTower;
 
-    public Baloon(String name, Coordinates coordinates, String type)
+    public Baloon(String name, Coordinates coordinates)
     {
         super(name, coordinates);
     }
