@@ -1,24 +1,26 @@
 package weatherRelated;
 
+import java.util.Random;
 import aircraftRelated.*;
 
-public class WeatherProvider{
-    private WeatherProvider weatherProvider;
-    private String[] weather  = {"RAIN", "FOG", "SUN", "SNOW"};;
-    WeatherProvider(){}
-    public WeatherProvider getProvider() {
-        if(weatherProvider != null)
-        return weatherProvider;
-    else
-        weatherProvider = new WeatherProvider();
-    
-        return this.weatherProvider;
+public class WeatherProvider {
+    private static WeatherProvider weatherProvider = new WeatherProvider();;
+    private static final String[] weather = { "RAIN", "FOG", "SUN", "SNOW" };;
+
+    WeatherProvider() {
     }
 
-    public String getCurrentWeather(Coordinates coordinates)
-    {
-        int ran = (int) (Math.random()* 4);
-        return weather[ran];
+    public static WeatherProvider getProvider() {
+     
+        //     weatherProvider = new WeatherProvider();
+
+        return weatherProvider;
+    }
+
+    public String getCurrentWeather(Coordinates coordinates) {
+        // int ran = (int) (Math.random() * 4);
+        // int int_random = new Random().nextInt(5);
+        return weather[new Random().nextInt(5)];
     }
 
 }

@@ -4,7 +4,7 @@ import java.util.Scanner; // Import the Scanner class to read text files
 
 import aircraftRelated.*;
 import myExceptions.*;
-import  weatherRelated.*;
+import weatherRelated.*;
 
 public class Main {
     static Scanner myReader;
@@ -51,14 +51,21 @@ public class Main {
                     latitude = Integer.parseInt(line.split(" ")[3]);
                     height = Integer.parseInt(line.split(" ")[4]);
 
-                    System.out.println("    " + type + "/" + name + "/" + longtitude + "/" + latitude + "/" + height);
-                    Flyable flb =  new AircraftFactory.newAirecraft(
-                        type,
-                        name,
-                       longtitude,
-                       latitude,
-                        height
-                );
+                    // System.out.println(" " + type + "/" + name + "/" + longtitude + "/" +
+                    // latitude + "/" + height);
+
+                    WeatherTower tower = new WeatherTower();
+                    Flyable flb = AircraftFactory.newAirecraft(
+                            type,
+                            name,
+                            longtitude,
+                            latitude,
+                            height);
+                    if (flb == null)
+                        throw new MyCustomException("AircraftFactory Failed");
+
+                    tower.register(flb);
+                    flb.registerTower(tower);
                 }
 
                 lineCounter++;

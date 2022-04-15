@@ -1,11 +1,10 @@
 package aircraftRelated;
 
-import weatherRelated.*;
 import myExceptions.*;
 
 public class AircraftFactory {
 
-    public Flyable newAirecraft(String type, String name, int longitude, int latitude, int height) {
+    public static Flyable newAirecraft(String type, String name, int longitude, int latitude, int height) {
         try {
             if (longitude <= 0 || latitude <= 0 || height <= 0) {
                 throw new MyCustomException("Coordinates Must Be Positive");
