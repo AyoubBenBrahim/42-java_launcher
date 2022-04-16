@@ -8,15 +8,18 @@ import weatherRelated.*;
 
 public class Main {
     static Scanner myReader;
-    static int cyclesNbr;
-
+    static int simulationCyclesNbr;
+    static  WeatherTower tower;
+    
     public static void main(String[] args) {
         try {
+            // int simulationCyclesNbr;
             String type;
             String name;
             int longtitude;
             int latitude;
             int height;
+           
 
             if (args.length != 1) {
                 throw new MyCustomException("Invalid Argument");
@@ -40,8 +43,8 @@ public class Main {
                     throw new MyCustomException("The Line Format is Wrong");
                 }
                 if (lineCounter == 1) {
-                    cyclesNbr = Integer.parseInt(line);
-                    if (cyclesNbr <= 0) {
+                    simulationCyclesNbr = Integer.parseInt(line);
+                    if (simulationCyclesNbr <= 0) {
                         throw new MyCustomException("Must be Positive");
                     }
                 } else {
@@ -54,7 +57,7 @@ public class Main {
                     // System.out.println(" " + type + "/" + name + "/" + longtitude + "/" +
                     // latitude + "/" + height);
 
-                    WeatherTower tower = new WeatherTower();
+                    tower = new WeatherTower();
                     Flyable flb = AircraftFactory.newAirecraft(
                             type,
                             name,
@@ -71,6 +74,10 @@ public class Main {
                 lineCounter++;
             }
             myReader.close();
+
+            for (int i = 1; i <= simulationCyclesNbr; i++)
+                tower.changeWeather();
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (Exception e) {

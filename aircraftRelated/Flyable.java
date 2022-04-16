@@ -7,8 +7,6 @@ import weatherRelated.*;
 
 public interface Flyable {
     public void updateConditions();
+    public void updateCoordinates(String weatherTower);
     public void registerTower(WeatherTower weatherTower);
-
-    // String getName();
-    // String getType();
   }
