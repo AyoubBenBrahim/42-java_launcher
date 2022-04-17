@@ -15,10 +15,10 @@ public class Helicopter extends Aircraft implements Flyable {
     public Helicopter(String name, Coordinates coordinates) {
         super(name, coordinates);
 
-        logMessage.put("SUN", "This is hot.");
-        logMessage.put("RAIN", "Rain time");
-        logMessage.put("FOG", "Fog, can't see.");
-        logMessage.put("SNOW", "My rotor is going to freeze!");
+        logMessage.put("SUN", "This is hot. | 10 0 2");
+        logMessage.put("RAIN", "Rain time | 5 0 0");
+        logMessage.put("FOG", "Fog, can't see. | 1 0 0");
+        logMessage.put("SNOW", "My rotor is going to freeze! | 0 0 -12");
     }
 
     @Override
@@ -31,8 +31,18 @@ public class Helicopter extends Aircraft implements Flyable {
             myWriter = new FileWriter("simulation.txt");
 
             if (logMessage.get(weather) != null) {
-                updateCoordinates(weather);
-                myWriter.write("Helicopter#" + this.name + "(" + this.id + "): " + logMessage.get(weather) + ".\n");
+                // int arr[] = {};
+                // updateCoordinates(weather, arr);
+                // HashMap<String, String> params = new HashMap<String, String>();
+                // params.put("SUN", "10 0 2");
+                // params.put("RAIN", "5 0 0");
+                // params.put("FOG", "1 0 0");
+                // params.put("SNOW", "0 0 -12 ");
+
+                updateCoordinates(weather, logMessage);
+
+                myWriter.write("Helicopter#" + this.name + "(" + this.id + "): " + logMessage.get(weather).split("|")[0]
+                        + ".\n");
 
                 if (coordinates.getHeight() <= 0) {
                     weatherTower.unregister(this);
@@ -49,40 +59,20 @@ public class Helicopter extends Aircraft implements Flyable {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     @Override
     public void registerTower(WeatherTower weatherTower) {
-    }
+        try {
 
-    @Override
-    public void updateCoordinates(String weatherTower) {
-        switch (weather) {
-            case "SUN":
-                coordinates = new Coordinates(
-                        coordinates.getLongitude() + 10,
-                        coordinates.getLatitude(),
-                        coordinates.getHeight() + 2);
-                break;
-            case "RAIN":
-                coordinates = new Coordinates(
-                        coordinates.getLongitude() + 5,
-                        coordinates.getLatitude(),
-                        coordinates.getHeight());
-                break;
-            case "FOG":
-                coordinates = new Coordinates(
-                        coordinates.getLongitude() + 1,
-                        coordinates.getLatitude(),
-                        coordinates.getHeight());
-                break;
-            case "SNOW":
-                coordinates = new Coordinates(
-                        coordinates.getLongitude(),
-                        coordinates.getLatitude(),
-                        coordinates.getHeight() - 12);
-                break;
+            this.weatherTower = weatherTower;
+            this.weatherTower.register(this);
+
+            myWriter = new FileWriter("simulation.txt");
+            myWriter.write("Tower says: Helicopter#" + name + "(" + id + ")" + " registered to weather tower.\n");
+            myWriter.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

@@ -9,8 +9,8 @@ import weatherRelated.*;
 public class Main {
     static Scanner myReader;
     static int simulationCyclesNbr;
-    static  WeatherTower tower;
-    
+    static WeatherTower tower;
+
     public static void main(String[] args) {
         try {
             // int simulationCyclesNbr;
@@ -19,7 +19,6 @@ public class Main {
             int longtitude;
             int latitude;
             int height;
-           
 
             if (args.length != 1) {
                 throw new MyCustomException("Invalid Argument");
@@ -37,15 +36,15 @@ public class Main {
                 String line = myReader.nextLine();
                 System.out.println(line);
                 if (line.length() <= 0) {
-                    throw new MyCustomException("There is an Empty Line");
+                    throw new MyCustomException("There is an Empty Line\n");
                 }
                 if (lineCounter != 1 && line.split(" ").length != 5) {
-                    throw new MyCustomException("The Line Format is Wrong");
+                    throw new MyCustomException("The Line Format is Wrong\n");
                 }
                 if (lineCounter == 1) {
                     simulationCyclesNbr = Integer.parseInt(line);
                     if (simulationCyclesNbr <= 0) {
-                        throw new MyCustomException("Must be Positive");
+                        throw new MyCustomException("Must be Positive\n");
                     }
                 } else {
                     type = line.split(" ")[0];
@@ -53,6 +52,7 @@ public class Main {
                     longtitude = Integer.parseInt(line.split(" ")[2]);
                     latitude = Integer.parseInt(line.split(" ")[3]);
                     height = Integer.parseInt(line.split(" ")[4]);
+                    latitude = (latitude > 100) ? 100 : latitude;
 
                     // System.out.println(" " + type + "/" + name + "/" + longtitude + "/" +
                     // latitude + "/" + height);
@@ -65,7 +65,7 @@ public class Main {
                             latitude,
                             height);
                     if (flb == null)
-                        throw new MyCustomException("AircraftFactory Failed");
+                        throw new MyCustomException("AircraftFactory Failed\n");
 
                     tower.register(flb);
                     flb.registerTower(tower);
@@ -78,10 +78,7 @@ public class Main {
             for (int i = 1; i <= simulationCyclesNbr; i++)
                 tower.changeWeather();
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (Exception e) {
-            // myReader.close();
             e.printStackTrace();
         }
 
