@@ -1,5 +1,4 @@
 import java.io.File; // Import the File class
-import java.io.FileNotFoundException; // Import this class to handle errors
 import java.util.Scanner; // Import the Scanner class to read text files
 
 import aircraftRelated.*;
@@ -9,11 +8,10 @@ import weatherRelated.*;
 public class Main {
     static Scanner myReader;
     static int simulationCyclesNbr;
-    static WeatherTower tower;
+    static WeatherTower tower = new WeatherTower();
 
     public static void main(String[] args) {
         try {
-            // int simulationCyclesNbr;
             String type;
             String name;
             int longtitude;
@@ -34,7 +32,7 @@ public class Main {
             }
             while (myReader.hasNextLine()) {
                 String line = myReader.nextLine();
-                System.out.println(line);
+                // System.out.println(line);
                 if (line.length() <= 0) {
                     throw new MyCustomException("There is an Empty Line\n");
                 }
@@ -44,7 +42,7 @@ public class Main {
                 if (lineCounter == 1) {
                     simulationCyclesNbr = Integer.parseInt(line);
                     if (simulationCyclesNbr <= 0) {
-                        throw new MyCustomException("Must be Positive\n");
+                        throw new MyCustomException("Cycles nbr Must be Positive\n");
                     }
                 } else {
                     type = line.split(" ")[0];
@@ -52,14 +50,10 @@ public class Main {
                     longtitude = Integer.parseInt(line.split(" ")[2]);
                     latitude = Integer.parseInt(line.split(" ")[3]);
                     height = Integer.parseInt(line.split(" ")[4]);
-                    latitude = (latitude > 100) ? 100 : latitude;
+                    height = (height > 100) ? 100 : height;
 
-                    // System.out.println(" " + type + "/" + name + "/" + longtitude + "/" +
-                    // latitude + "/" + height);
-
-                    tower = new WeatherTower();
-                    System.out.println("Mainnnnnnnnnnnnnnnnnnnnn");
-                    Flyable flb = AircraftFactory.newAirecraft(
+                    // tower = new WeatherTower();
+                    Flyable flb = AircraftFactory.newAircraft(
                             type,
                             name,
                             longtitude,
@@ -70,7 +64,6 @@ public class Main {
                     tower.register(flb);
                     flb.registerTower(tower);
                 }
-
                 lineCounter++;
             }
             myReader.close();

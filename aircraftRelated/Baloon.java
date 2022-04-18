@@ -12,7 +12,6 @@ public class Baloon extends Aircraft implements Flyable {
     
     public Baloon(String name, Coordinates coordinates) {
         super(name, coordinates);
-        System.out.println("\t**** Balooooooooooon Constr ****");
         
         logMessage.put("SUN", "Let's enjoy the good weather and take some pics. | 2 0 4");
         logMessage.put("RAIN", "Damn you rain! You messed up my baloon. | 0 0 -5");
@@ -24,17 +23,18 @@ public class Baloon extends Aircraft implements Flyable {
     public void updateConditions() {
         
         try {
+
             String weather = weatherTower.getWeather(coordinates);
             File myObj = new File("simulation.txt");
-            // if (!myObj.createNewFile())
-            //     throw new MyCustomException("the named file already exists simulation.txt");
-            // myWriter = new FileWriter("simulation.txt");
+   
             myWriter = new FileWriter(myObj, true);
 
             if (logMessage.get(weather) != null) {
                 updateCoordinates(weather, logMessage);
-                myWriter.write("Baloon#" + this.name + "(" + this.id + "): " + logMessage.get(weather).split("|")[0]
-                        + ".\n");
+
+                String strOut = logMessage.get(weather).substring(0, logMessage.get(weather).indexOf("|"));
+
+                myWriter.write("Baloon#" + this.name + "(" + this.id + "): " + strOut + "\n");
 
                 if (coordinates.getHeight() <= 0) {
                     weatherTower.unregister(this);
@@ -60,7 +60,8 @@ public class Baloon extends Aircraft implements Flyable {
             this.weatherTower = weatherTower;
             this.weatherTower.register(this);
 
-            myWriter = new FileWriter("simulation.txt");
+            File myObj = new File("simulation.txt");
+            myWriter = new FileWriter(myObj, true);
             myWriter.write("Tower says: Baloon#" + name + "(" + id + ")" + " registered to weather tower.\n");
             myWriter.close();
         } catch (Exception e) {

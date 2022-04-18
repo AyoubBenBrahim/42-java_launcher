@@ -26,15 +26,13 @@ public class JetPlane extends Aircraft implements Flyable {
             String weather = weatherTower.getWeather(coordinates);
 
             File myObj = new File("simulation.txt");
-            // if (!myObj.createNewFile())
-            //     throw new MyCustomException("the named file already exists simulation.txt");
-            // myWriter = new FileWriter("simulation.txt");
             myWriter = new FileWriter(myObj, true);
 
             if (logMessage.get(weather) != null) {
                 updateCoordinates(weather, logMessage);
-                myWriter.write("JetPlane#" + this.name + "(" + this.id + "): " + logMessage.get(weather).split("|")[0]
-                        + ".\n");
+                String strOut = logMessage.get(weather).substring(0, logMessage.get(weather).indexOf("|"));
+
+                myWriter.write("JetPlane#" + this.name + "(" + this.id + "): " + strOut + "\n");
 
                 if (coordinates.getHeight() <= 0) {
                     weatherTower.unregister(this);
@@ -60,7 +58,9 @@ public class JetPlane extends Aircraft implements Flyable {
             this.weatherTower = weatherTower;
             this.weatherTower.register(this);
 
-            myWriter = new FileWriter("simulation.txt");
+            // myWriter = new FileWriter("simulation.txt");
+            File myObj = new File("simulation.txt");
+            myWriter = new FileWriter(myObj, true);
             myWriter.write("Tower says: JetPlane#" + name + "(" + id + ")" + " registered to weather tower.\n");
             myWriter.close();
         } catch (Exception e) {
