@@ -58,6 +58,7 @@ public class Main {
                     // latitude + "/" + height);
 
                     tower = new WeatherTower();
+                    System.out.println("Mainnnnnnnnnnnnnnnnnnnnn");
                     Flyable flb = AircraftFactory.newAirecraft(
                             type,
                             name,
@@ -66,7 +67,6 @@ public class Main {
                             height);
                     if (flb == null)
                         throw new MyCustomException("AircraftFactory Failed\n");
-
                     tower.register(flb);
                     flb.registerTower(tower);
                 }

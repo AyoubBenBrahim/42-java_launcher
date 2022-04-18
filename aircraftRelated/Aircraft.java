@@ -1,6 +1,7 @@
 package aircraftRelated;
 
 import java.util.HashMap;
+import java.util.stream.Stream;
 
 public class Aircraft {
 
@@ -26,9 +27,15 @@ public class Aircraft {
         int new_Latitude;
         int new_Height;
 
-        new_Longtitude = Integer.parseInt(params.get(weather).split("|")[1].split(" ")[0]);
-        new_Latitude = Integer.parseInt(params.get(weather).split("|")[1].split(" ")[1]);
-        new_Height = Integer.parseInt(params.get(weather).split("|")[1].split(" ")[2]);
+        String parsCoords = params.get(weather).substring(params.get(weather).lastIndexOf('|') + 1);
+        String[] arrOfStr = parsCoords.split(" ");
+
+        System.out.println("\n\n" + params.get(weather) + "\n"
+                + arrOfStr[1] + " * " + arrOfStr[2] + " * " + arrOfStr[3] + "\n\n");
+
+        new_Longtitude = Integer.parseInt(arrOfStr[1]);
+        new_Latitude = Integer.parseInt(arrOfStr[2]);
+        new_Height = Integer.parseInt(arrOfStr[3]);
 
         new_Height = (coordinates.getHeight() + new_Height > 100) ? 100 : this.coordinates.getHeight() + new_Height;
 

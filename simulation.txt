@@ -1,0 +1,8 @@
+Tower says: Helicopter#H4(1) registered to weather tower.
+Helicopter#H4(1): R.
+Helicopter#H4(1): T.
+Helicopter#H4(1): M.
+Helicopter#H4(1): T.
+Helicopter#H4(1): R.
+Helicopter#H4(1): T.
+Helicopter#H4(1): R.

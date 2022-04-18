@@ -8,27 +8,29 @@ import weatherRelated.*;
 
 public class Helicopter extends Aircraft implements Flyable {
     private WeatherTower weatherTower;
-    String weather = weatherTower.getWeather(coordinates);
     HashMap<String, String> logMessage = new HashMap<String, String>();
     public FileWriter myWriter;
-
+    
     public Helicopter(String name, Coordinates coordinates) {
         super(name, coordinates);
-
+        
         logMessage.put("SUN", "This is hot. | 10 0 2");
         logMessage.put("RAIN", "Rain time | 5 0 0");
         logMessage.put("FOG", "Fog, can't see. | 1 0 0");
         logMessage.put("SNOW", "My rotor is going to freeze! | 0 0 -12");
     }
-
+    
     @Override
     public void updateConditions() {
-
+        
         try {
+            String weather = weatherTower.getWeather(coordinates);
+
             File myObj = new File("simulation.txt");
-            if (!myObj.createNewFile())
-                throw new MyCustomException("Failed to create File simulation.txt");
-            myWriter = new FileWriter("simulation.txt");
+            // if (myObj.createNewFile() == false)
+            //     throw new MyCustomException("the named file already exists simulation.txt");
+            // myWriter = new FileWriter("simulation.txt");
+            myWriter = new FileWriter(myObj, true);
 
             if (logMessage.get(weather) != null) {
                 // int arr[] = {};
