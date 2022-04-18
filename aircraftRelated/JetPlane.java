@@ -6,7 +6,7 @@ import myExceptions.MyCustomException;
 import weatherRelated.*;
 
 public class JetPlane extends Aircraft implements Flyable {
-    private WeatherTower weatherTower;
+    public WeatherTower weatherTower;
     HashMap<String, String> logMessage = new HashMap<String, String>();
     public FileWriter myWriter;
     
@@ -22,33 +22,34 @@ public class JetPlane extends Aircraft implements Flyable {
     @Override
     public void updateConditions() {
         
-        try {
-            String weather = weatherTower.getWeather(coordinates);
+        // String weather = weatherTower.getWeather(coordinates);
+        // try {
 
-            File myObj = new File("simulation.txt");
-            myWriter = new FileWriter(myObj, true);
+        //     File myObj = new File("simulation.txt");
+        //     myWriter = new FileWriter(myObj, true);
 
-            if (logMessage.get(weather) != null) {
-                updateCoordinates(weather, logMessage);
-                String strOut = logMessage.get(weather).substring(0, logMessage.get(weather).indexOf("|"));
+        //     if (logMessage.get(weather) != null) {
+        //         updateCoordinates(weather, logMessage);
+        //         String strOut = logMessage.get(weather).substring(0, logMessage.get(weather).indexOf("|"));
 
-                myWriter.write("JetPlane#" + this.name + "(" + this.id + "): " + strOut + "\n");
+        //         myWriter.write("JetPlane#" + this.name + "(" + this.id + "): " + strOut + "\n");
 
-                if (coordinates.getHeight() <= 0) {
-                    weatherTower.unregister(this);
-                    myWriter.write(
-                            "Tower says: JetPlane#" + this.name + "(" + this.id + ")"
-                                    + " unregistered from weather tower.\n");
-                    myWriter.close();
-                }
-                myWriter.close();
-            } else {
-                myWriter.close();
-                throw new MyCustomException("Uknown Weather!");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        //         if (coordinates.getHeight() <= 0) {
+        //             weatherTower.unregister(this);
+        //             myWriter.write(
+        //                     "Tower says: JetPlane#" + this.name + "(" + this.id + ")"
+        //                             + " unregistered from weather tower.\n");
+        //             myWriter.close();
+        //         }
+        //         myWriter.close();
+        //     } else {
+        //         myWriter.close();
+        //         throw new MyCustomException("Uknown Weather!");
+        //     }
+        // } catch (Exception e) {
+        //     e.printStackTrace();
+        // }
+        handlOutPut(this);
     }
 
     @Override
