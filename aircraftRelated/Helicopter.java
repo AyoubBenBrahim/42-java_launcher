@@ -54,7 +54,7 @@ public class Helicopter extends Aircraft implements Flyable {
         // } catch (Exception e) {
         //     e.printStackTrace();
         // }
-        handlOutPut(this);
+        outputHandler(this);
     }
 
     @Override

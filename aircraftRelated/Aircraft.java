@@ -47,7 +47,7 @@ public class Aircraft {
                 new_Height);
     }
 
-    public void handlOutPut(Aircraft airCraft) {
+    public void outputHandler(Aircraft airCraft) {
 
         String weather;
         String type;
