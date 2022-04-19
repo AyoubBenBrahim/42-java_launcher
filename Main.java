@@ -61,7 +61,7 @@ public class Main {
                             height);
                     if (flb == null)
                         throw new MyCustomException("AircraftFactory Failed\n");
-                    tower.register(flb);
+                    // tower.register(flb);
                     flb.registerTower(tower);
                 }
                 lineCounter++;

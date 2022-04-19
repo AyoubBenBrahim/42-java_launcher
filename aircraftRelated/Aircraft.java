@@ -32,9 +32,6 @@ public class Aircraft {
         String parsCoords = params.get(weather).substring(params.get(weather).lastIndexOf('|') + 1);
         String[] arrOfStr = parsCoords.split(" ");
 
-        // System.out.println("\n\n" + params.get(weather) + "\n"
-        // + arrOfStr[1] + " * " + arrOfStr[2] + " * " + arrOfStr[3] + "\n\n");
-
         new_Longtitude = Integer.parseInt(arrOfStr[1]);
         new_Latitude = Integer.parseInt(arrOfStr[2]);
         new_Height = Integer.parseInt(arrOfStr[3]);
@@ -65,7 +62,6 @@ public class Aircraft {
                 id = ((Helicopter) airCraft).id;
                 type = "Helicopter";
                 weatherTower = ((Helicopter) airCraft).weatherTower;
-
             } else if (airCraft instanceof Baloon) {
                 coords = ((Baloon) airCraft).coordinates;
                 weather = ((Baloon) airCraft).weatherTower.getWeather(coords);

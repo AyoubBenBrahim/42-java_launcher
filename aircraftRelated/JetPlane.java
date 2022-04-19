@@ -49,6 +49,7 @@ public class JetPlane extends Aircraft implements Flyable {
         // } catch (Exception e) {
         //     e.printStackTrace();
         // }
+
         outputHandler(this);
     }
 
