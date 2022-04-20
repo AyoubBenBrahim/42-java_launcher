@@ -1,0 +1,170 @@
+Tower says: Baloon#B1(1) registered to weather tower.
+Tower says: Baloon#B2(2) registered to weather tower.
+Tower says: JetPlane#J1(3) registered to weather tower.
+Tower says: Helicopter#H1(4) registered to weather tower.
+Tower says: Helicopter#H2(5) registered to weather tower.
+Tower says: Helicopter#H3(6) registered to weather tower.
+Tower says: Baloon#B3(7) registered to weather tower.
+Tower says: JetPlane#J2(8) registered to weather tower.
+Tower says: Helicopter#H4(9) registered to weather tower.
+Baloon#B1(1): Fog, can't see. 
+Baloon#B2(2): Damn you rain! You messed up my baloon. 
+JetPlane#J1(3): OMG! Winter is coming! 
+Helicopter#H1(4): This is hot. 
+Helicopter#H2(5): Rain time. 
+Helicopter#H3(6): This is hot. 
+Baloon#B3(7): It's snowing. We're gonna crash. 
+JetPlane#J2(8): It's snowing. We're gonna crash. 
+Helicopter#H4(9): My rotor is going to freeze! 
+Baloon#B1(1): It's snowing. We're gonna crash. 
+Baloon#B2(2): Fog, can't see. 
+JetPlane#J1(3): It's snowing. We're gonna crash. 
+Helicopter#H1(4): My rotor is going to freeze! 
+Helicopter#H2(5): This is hot. 
+Helicopter#H3(6): Rain time. 
+Baloon#B3(7): Fog, can't see. 
+JetPlane#J2(8): OMG! Winter is coming! 
+Helicopter#H4(9): Fog, can't see. 
+Baloon#B1(1): It's snowing. We're gonna crash. 
+Baloon#B2(2): Let's enjoy the good weather and take some pics. 
+JetPlane#J1(3): Fog, can't see. 
+Helicopter#H1(4): Rain time. 
+Helicopter#H2(5): My rotor is going to freeze! 
+Helicopter#H3(6): This is hot. 
+Baloon#B3(7): Damn you rain! You messed up my baloon. 
+JetPlane#J2(8): It's snowing. We're gonna crash. 
+Helicopter#H4(9): This is hot. 
+Baloon#B1(1): Fog, can't see. 
+Tower says: Baloon#B1(1) unregistered from weather tower.
+JetPlane#J1(3): It's raining. Better watch out for lightings. 
+Helicopter#H1(4): Rain time. 
+Helicopter#H2(5): Rain time. 
+Helicopter#H3(6): Fog, can't see. 
+Baloon#B3(7): Fog, can't see. 
+JetPlane#J2(8): It's raining. Better watch out for lightings. 
+Helicopter#H4(9): Rain time. 
+Baloon#B2(2): It's snowing. We're gonna crash. 
+JetPlane#J1(3): OMG! Winter is coming! 
+Helicopter#H1(4): My rotor is going to freeze! 
+Helicopter#H2(5): Rain time. 
+Helicopter#H3(6): My rotor is going to freeze! 
+Baloon#B3(7): It's snowing. We're gonna crash. 
+JetPlane#J2(8): Fog, can't see. 
+Helicopter#H4(9): Fog, can't see. 
+Baloon#B2(2): Fog, can't see. 
+JetPlane#J1(3): It's snowing. We're gonna crash. 
+Helicopter#H1(4): Fog, can't see. 
+Tower says: Helicopter#H1(4) unregistered from weather tower.
+Helicopter#H3(6): Fog, can't see. 
+Baloon#B3(7): Fog, can't see. 
+Tower says: Baloon#B3(7) unregistered from weather tower.
+Helicopter#H4(9): This is hot. 
+Baloon#B2(2): Damn you rain! You messed up my baloon. 
+JetPlane#J1(3): It's snowing. We're gonna crash. 
+Helicopter#H2(5): Rain time. 
+Helicopter#H3(6): Rain time. 
+JetPlane#J2(8): OMG! Winter is coming! 
+Helicopter#H4(9): Fog, can't see. 
+Baloon#B2(2): It's snowing. We're gonna crash. 
+JetPlane#J1(3): OMG! Winter is coming! 
+Helicopter#H2(5): Rain time. 
+Helicopter#H3(6): This is hot. 
+JetPlane#J2(8): It's snowing. We're gonna crash. 
+Helicopter#H4(9): Fog, can't see. 
+Baloon#B2(2): Damn you rain! You messed up my baloon. 
+JetPlane#J1(3): Fog, can't see. 
+Helicopter#H2(5): This is hot. 
+Helicopter#H3(6): Rain time. 
+JetPlane#J2(8): It's snowing. We're gonna crash. 
+Helicopter#H4(9): Fog, can't see. 
+Baloon#B2(2): Damn you rain! You messed up my baloon. 
+JetPlane#J1(3): It's snowing. We're gonna crash. 
+Helicopter#H2(5): Fog, can't see. 
+Helicopter#H3(6): My rotor is going to freeze! 
+JetPlane#J2(8): OMG! Winter is coming! 
+Helicopter#H4(9): Rain time. 
+Baloon#B2(2): Fog, can't see. 
+JetPlane#J1(3): Fog, can't see. 
+Helicopter#H2(5): My rotor is going to freeze! 
+Helicopter#H3(6): This is hot. 
+JetPlane#J2(8): OMG! Winter is coming! 
+Helicopter#H4(9): This is hot. 
+Baloon#B2(2): Let's enjoy the good weather and take some pics. 
+JetPlane#J1(3): OMG! Winter is coming! 
+Helicopter#H2(5): Rain time. 
+Helicopter#H3(6): Rain time. 
+JetPlane#J2(8): Fog, can't see. 
+Helicopter#H4(9): Rain time. 
+Baloon#B2(2): Damn you rain! You messed up my baloon. 
+JetPlane#J1(3): Fog, can't see. 
+Helicopter#H2(5): Rain time. 
+Helicopter#H3(6): My rotor is going to freeze! 
+JetPlane#J2(8): OMG! Winter is coming! 
+Helicopter#H4(9): Fog, can't see. 
+Baloon#B2(2): It's snowing. We're gonna crash. 
+JetPlane#J1(3): It's raining. Better watch out for lightings. 
+Helicopter#H2(5): My rotor is going to freeze! 
+Helicopter#H3(6): Fog, can't see. 
+JetPlane#J2(8): OMG! Winter is coming! 
+Helicopter#H4(9): My rotor is going to freeze! 
+Baloon#B2(2): Let's enjoy the good weather and take some pics. 
+Tower says: Baloon#B2(2) unregistered from weather tower.
+Helicopter#H2(5): Rain time. 
+Helicopter#H3(6): This is hot. 
+JetPlane#J2(8): It's snowing. We're gonna crash. 
+Helicopter#H4(9): This is hot. 
+JetPlane#J1(3): Fog, can't see. 
+Helicopter#H2(5): Fog, can't see. 
+Helicopter#H3(6): Rain time. 
+JetPlane#J2(8): OMG! Winter is coming! 
+Helicopter#H4(9): This is hot. 
+JetPlane#J1(3): OMG! Winter is coming! 
+Helicopter#H2(5): Rain time. 
+Helicopter#H3(6): Fog, can't see. 
+JetPlane#J2(8): It's snowing. We're gonna crash. 
+Helicopter#H4(9): Rain time. 
+JetPlane#J1(3): Fog, can't see. 
+Helicopter#H2(5): Fog, can't see. 
+Helicopter#H3(6): My rotor is going to freeze! 
+JetPlane#J2(8): OMG! Winter is coming! 
+Helicopter#H4(9): Fog, can't see. 
+JetPlane#J1(3): It's snowing. We're gonna crash. 
+Helicopter#H2(5): Rain time. 
+Helicopter#H3(6): Rain time. 
+JetPlane#J2(8): It's raining. Better watch out for lightings. 
+Helicopter#H4(9): My rotor is going to freeze! 
+JetPlane#J1(3): OMG! Winter is coming! 
+Helicopter#H2(5): Rain time. 
+Helicopter#H3(6): My rotor is going to freeze! 
+JetPlane#J2(8): It's raining. Better watch out for lightings. 
+Helicopter#H4(9): This is hot. 
+JetPlane#J1(3): OMG! Winter is coming! 
+Helicopter#H2(5): This is hot. 
+Helicopter#H3(6): This is hot. 
+JetPlane#J2(8): It's snowing. We're gonna crash. 
+Helicopter#H4(9): My rotor is going to freeze! 
+JetPlane#J1(3): It's snowing. We're gonna crash. 
+Helicopter#H2(5): This is hot. 
+Helicopter#H3(6): Rain time. 
+JetPlane#J2(8): OMG! Winter is coming! 
+Helicopter#H4(9): This is hot. 
+JetPlane#J1(3): Fog, can't see. 
+Helicopter#H2(5): Rain time. 
+Helicopter#H3(6): My rotor is going to freeze! 
+JetPlane#J2(8): It's raining. Better watch out for lightings. 
+Helicopter#H4(9): Fog, can't see. 
+JetPlane#J1(3): Fog, can't see. 
+Helicopter#H2(5): This is hot. 
+Helicopter#H3(6): This is hot. 
+JetPlane#J2(8): It's raining. Better watch out for lightings. 
+Helicopter#H4(9): My rotor is going to freeze! 
+JetPlane#J1(3): It's snowing. We're gonna crash. 
+Helicopter#H2(5): Fog, can't see. 
+Helicopter#H3(6): This is hot. 
+JetPlane#J2(8): It's raining. Better watch out for lightings. 
+Helicopter#H4(9): Rain time. 
+JetPlane#J1(3): Fog, can't see. 
+Tower says: JetPlane#J1(3) unregistered from weather tower.
+Helicopter#H3(6): Rain time. 
+JetPlane#J2(8): OMG! Winter is coming! 
+Helicopter#H4(9): My rotor is going to freeze! 

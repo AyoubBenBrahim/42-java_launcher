@@ -1,4 +1,6 @@
 import java.io.File; // Import the File class
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner; // Import the Scanner class to read text files
 
 import aircraftRelated.*;
@@ -17,6 +19,7 @@ public class Main {
             int longtitude;
             int latitude;
             int height;
+            ArrayList<Flyable> flyableObjs = new ArrayList<Flyable>();
 
             if (args.length != 1) {
                 throw new MyCustomException("Invalid Argument");
@@ -45,14 +48,23 @@ public class Main {
                         throw new MyCustomException("Cycles nbr Must be Positive\n");
                     }
                 } else {
-                    type = line.split(" ")[0];
-                    name = line.split(" ")[1];
-                    longtitude = Integer.parseInt(line.split(" ")[2]);
-                    latitude = Integer.parseInt(line.split(" ")[3]);
-                    height = Integer.parseInt(line.split(" ")[4]);
+                    String params[] = line.split(" ");
+                    // for(String param : params)
+                    // {
+                    // if (param.isEmpty())
+                    // throw new MyCustomException("Space As AirCraft Name Is Not Allowed.\n");//
+                    // splite doesn't detect the space
+                    // }
+
+                    type = params[0];
+                    name = params[1];
+                    if ((name.matches("^[A-Z][A-z0-9]+$")) == false)
+                        throw new MyCustomException("AireCraft Name Starts With UpperCase Alpha\n");
+                    longtitude = Integer.parseInt(params[2]);
+                    latitude = Integer.parseInt(params[3]);
+                    height = Integer.parseInt(params[4]);
                     height = (height > 100) ? 100 : height;
 
-                    // tower = new WeatherTower();
                     Flyable flb = AircraftFactory.newAircraft(
                             type,
                             name,
@@ -61,18 +73,21 @@ public class Main {
                             height);
                     if (flb == null)
                         throw new MyCustomException("AircraftFactory Failed\n");
-                    // tower.register(flb);
-                    flb.registerTower(tower);
+                    flyableObjs.add(flb);
                 }
                 lineCounter++;
             }
-            myReader.close();
 
-            for (int i = 1; i <= simulationCyclesNbr; i++)
+            for (Flyable flb : flyableObjs)
+                flb.registerTower(tower);
+
+            for (int i = 0; i <= simulationCyclesNbr; i++)
                 tower.changeWeather();
 
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            myReader.close();
         }
 
     }

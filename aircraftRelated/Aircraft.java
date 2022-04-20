@@ -11,7 +11,7 @@ public class Aircraft {
     protected long id;
     protected String name;
     protected Coordinates coordinates;
-    private static long idCounter = 0;
+    private static long idCounter;// 0 by default
 
     protected Aircraft(String name, Coordinates coordinates) {
         this.id = nextId();
@@ -56,29 +56,29 @@ public class Aircraft {
         try {
             if (airCraft instanceof Helicopter) {
                 coords = ((Helicopter) airCraft).coordinates;
-                weather = ((Helicopter) airCraft).weatherTower.getWeather(coords);
+                weather = ((Helicopter) airCraft).getWeatherTower().getWeather(coords);
                 logMessage = ((Helicopter) airCraft).logMessage;
                 name = ((Helicopter) airCraft).name;
                 id = ((Helicopter) airCraft).id;
                 type = "Helicopter";
-                weatherTower = ((Helicopter) airCraft).weatherTower;
+                weatherTower = ((Helicopter) airCraft).getWeatherTower();
             } else if (airCraft instanceof Baloon) {
                 coords = ((Baloon) airCraft).coordinates;
-                weather = ((Baloon) airCraft).weatherTower.getWeather(coords);
+                weather = ((Baloon) airCraft).getWeatherTower().getWeather(coords);
                 logMessage = ((Baloon) airCraft).logMessage;
                 name = ((Baloon) airCraft).name;
                 type = "Baloon";
                 id = ((Baloon) airCraft).id;
-                weatherTower = ((Baloon) airCraft).weatherTower;
+                weatherTower = ((Baloon) airCraft).getWeatherTower();
 
             } else {
                 coords = ((JetPlane) airCraft).coordinates;
-                weather = ((JetPlane) airCraft).weatherTower.getWeather(coords);
+                weather = ((JetPlane) airCraft).getWeatherTower().getWeather(coords);
                 logMessage = ((JetPlane) airCraft).logMessage;
                 name = ((JetPlane) airCraft).name;
                 type = "JetPlane";
                 id = ((JetPlane) airCraft).id;
-                weatherTower = ((JetPlane) airCraft).weatherTower;
+                weatherTower = ((JetPlane) airCraft).getWeatherTower();
             }
 
             File myObj = new File("simulation.txt");
@@ -95,7 +95,6 @@ public class Aircraft {
                     myWriter.write(
                             "Tower says: " + type + "#" + name + "(" + id + ")"
                                     + " unregistered from weather tower.\n");
-                    myWriter.close();
                 }
                 myWriter.close();
             } else {
