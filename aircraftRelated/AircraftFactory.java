@@ -10,9 +10,9 @@ public class AircraftFactory {
                 throw new MyCustomException("Coordinates Must Be Positive");
             }
             Coordinates coord = new Coordinates(longitude, latitude, height);
-            
+
             if (type.equalsIgnoreCase("Baloon")) {
-                
+
                 return new Baloon(name, coord);
             } else if (type.equalsIgnoreCase("Helicopter")) {
                 return new Helicopter(name, coord);

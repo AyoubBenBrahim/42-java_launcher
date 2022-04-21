@@ -1,8 +1,6 @@
 
 package aircraftRelated;
 
-import weatherRelated.*;
-
 public class Coordinates {
 
     private int longitude;

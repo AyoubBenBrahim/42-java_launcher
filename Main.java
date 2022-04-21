@@ -1,7 +1,6 @@
-import java.io.File; // Import the File class
+import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner; // Import the Scanner class to read text files
+import java.util.Scanner;
 
 import aircraftRelated.*;
 import myExceptions.*;
